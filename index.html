@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire Colombe ! 🎉</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation épurée -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Colombe<span class="logo-dot"></span></div>
+            <div class="nav-links">
+                <a href="#accueil" class="nav-link">Accueil</a>
+                <a href="#souvenirs" class="nav-link">Souvenirs</a>
+                <a href="#voeux" class="nav-link">Vœux</a>
+                <a href="#message" class="nav-link">Message</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Accueil Anniversaire -->
+    <section id="accueil" class="hero">
+        <!-- Fond avec confettis subtils -->
+        <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+        
+        <div class="hero-content">
+            <span class="hero-subtitle">Joyeux anniversaire</span>
+            <h1 class="hero-title">
+                <span class="title-line">Colombe</span>
+            </h1>
+            
+            <!-- Âge (personnalisable) -->
+            <div class="age-badge">
+                <span class="age-number">20</span>
+                <span class="age-text">printemps</span>
+            </div>
+            
+            <!-- Citation touchante -->
+            <p class="hero-quote">
+                "Une nouvelle année pour briller,<br>une nouvelle page à écrire."
+            </p>
+            
+            <!-- Bouton pour révéler le message -->
+            <button class="btn-elegant" id="revealBtn">
+                <span class="btn-text">Un mot pour toi</span>
+                <span class="btn-icon">→</span>
+            </button>
+            
+            <!-- Message caché -->
+            <div class="message-reveal" id="secretMessage">
+                <div class="message-card">
+                    <p>En ce jour spécial, je veux te dire à quel point tu comptes pour moi. Ta lumière éclaire mes journées, ta douceur réchauffe mon cœur. Que cette nouvelle année t'apporte tout le bonheur que tu mérites.</p>
+                    <span class="message-signature">Avec tout mon amour</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Souvenirs avec Carrousel -->
+    <section id="souvenirs" class="memories">
+        <div class="container">
+            <h2 class="section-title">La Princesse Que Tu Es</h2>
+            
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Les images seront chargées dynamiquement par JavaScript -->
+                </div>
+                
+                <!-- Navigation du carrousel -->
+                <button class="carousel-nav carousel-prev" id="carouselPrev">←</button>
+                <button class="carousel-nav carousel-next" id="carouselNext">→</button>
+                
+                <!-- Indicateurs (dots) -->
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+            
+            <!-- Légende qui change avec l'image -->
+            <p class="carousel-caption" id="carouselCaption"></p>
+        </div>
+    </section>
+
+    <!-- Section Vœux et Souhaits -->
+    <section id="voeux" class="wishes">
+        <div class="container">
+            <h2 class="section-title">Mes vœux pour toi</h2>
+            
+            <div class="wishes-grid">
+                <div class="wish-card">
+                    <div class="wish-icon">✨</div>
+                    <h3>Bonheur</h3>
+                    <p>Que chaque jour t'apporte sa dose de joie et de sourires.</p>
+                </div>
+                
+                <div class="wish-card">
+                    <div class="wish-icon">🌟</div>
+                    <h3>Rêves</h3>
+                    <p>Que tous tes rêves les plus chers se réalisent.</p>
+                </div>
+                
+                <div class="wish-card">
+                    <div class="wish-icon">💫</div>
+                    <h3>Amour</h3>
+                    <p>Que l'amour t'entoure et te réchauffe chaque instant.</p>
+                </div>
+                
+                <div class="wish-card">
+                    <div class="wish-icon">🌈</div>
+                    <h3>Couleurs</h3>
+                    <p>Que ta vie soit remplie de belles couleurs et d'émotions.</p>
+                </div>
+            </div>
+            
+            <!-- Message d'anniversaire touchant -->
+            <div class="birthday-message">
+                <p>Pour ton anniversaire, je te souhaite tout ce qui rend la vie belle : des rires sincères, des moments doux, des surprises joyeuses, et tout l'amour du monde. Tu mérites le meilleur, aujourd'hui et toujours.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Message Personnel -->
+    <section id="message" class="personal-message">
+        <div class="container">
+            <div class="message-card-large">
+                <h3>À toi, Colombe</h3>
+                <div class="message-content">
+                    <p>Il y a des rencontres qui changent une vie. La tienne a reste parmi les plus belle.</p>
+                    <p>Chaque rire passé à tes côtés est un cadeau. Ta façon de sourire, ta douceur, ta force tranquille... Tout en toi me rend diiiingue.</p>
+                    <p>Pour ton anniversaire, je voulais te dire merci. Merci d'être toi, la Olivia Pope de nos vies,</p>
+                    <p>La go charismatique, Enthousiaste, Pleine de vie et surtout Chargé en bas </p>
+                    <p>Tes amis t'aimes.</p>
+                </div>
+                <div class="message-footer">
+                    <span class="signature">Avec tout mes entrailles</span>
+                    <span class="date">Le jour de ton anniversaire</span>
+                </div>
+            </div>
+            
+            <!-- Petit compteur spécial anniversaire -->
+            <div class="birthday-counter">
+                <span class="counter-label">C'est ton jour spécial depuis</span>
+                <div class="counter-timer" id="birthdayTimer"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Pour toi, aujourd'hui et toujours ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

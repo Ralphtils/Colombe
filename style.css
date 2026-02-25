@@ -1,0 +1,747 @@
+/* style.css - Version Anniversaire */
+:root {
+    --primary: #d4a5a5;        /* Rose poudré doux */
+    --primary-dark: #c48b8b;    /* Rose légèrement plus foncé */
+    --secondary: #e8d3d3;       /* Rose très pâle */
+    --light: #faf7f7;           /* Blanc cassé */
+    --dark: #5c4e4e;            /* Brun-gris doux */
+    --text: #4a4a4a;            /* Gris foncé pour le texte */
+    --background: #fefcfc;       /* Fond presque blanc */
+    --shadow: rgba(212, 165, 165, 0.2);
+    --gold: #e6c9a8;            /* Doré doux pour l'anniversaire */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typographie */
+h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--secondary);
+    transform: translateY(-100%);
+    animation: slideDown 0.8s forwards 0.3s;
+}
+
+@keyframes slideDown {
+    to { transform: translateY(0); }
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    letter-spacing: 1px;
+}
+
+.logo-dot {
+    color: var(--primary);
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary);
+    transition: width 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-dark);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 100px 20px;
+}
+
+.confetti-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    text-align: center;
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-subtitle {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 20px;
+    line-height: 1.1;
+    position: relative;
+    display: inline-block;
+}
+
+.title-line {
+    display: inline-block;
+    position: relative;
+}
+
+.title-line::before,
+.title-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.title-line::before {
+    left: -60px;
+}
+
+.title-line::after {
+    right: -60px;
+}
+
+/* Badge âge */
+.age-badge {
+    display: inline-flex;
+    align-items: baseline;
+    background: linear-gradient(135deg, var(--primary), var(--gold));
+    padding: 10px 25px;
+    border-radius: 40px;
+    margin: 20px 0;
+    color: white;
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.age-number {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Cormorant Garamond', serif;
+    margin-right: 8px;
+}
+
+.age-text {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-quote {
+    font-size: 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--primary-dark);
+    margin: 30px 0;
+    line-height: 1.8;
+}
+
+/* Bouton élégant */
+.btn-elegant {
+    background: none;
+    border: 1px solid var(--primary);
+    padding: 15px 40px;
+    font-size: 1rem;
+    color: var(--primary-dark);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    border-radius: 30px;
+}
+
+.btn-elegant::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--primary);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    z-index: -1;
+}
+
+.btn-elegant:hover {
+    color: white;
+    border-color: var(--primary-dark);
+}
+
+.btn-elegant:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-icon {
+    transition: transform 0.3s;
+}
+
+.btn-elegant:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+/* Message révélé */
+.message-reveal {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+.message-reveal.show {
+    max-height: 300px;
+}
+
+.message-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px var(--shadow);
+    position: relative;
+    border: 1px solid var(--secondary);
+    animation: fadeScale 0.6s;
+}
+
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.message-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+.message-signature {
+    display: block;
+    margin-top: 20px;
+    text-align: right;
+    color: var(--primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Section Souvenirs */
+.memories {
+    padding: 100px 20px;
+    background: white;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--primary);
+}
+
+/* Carrousel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px var(--shadow);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Légendes des images */
+.carousel-slide::after {
+    content: attr(data-caption);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+    color: white;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.carousel-slide:hover::after {
+    opacity: 1;
+}
+
+/* Navigation du carrousel */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary);
+    cursor: pointer;
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: all 0.3s;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-nav:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: 20px;
+}
+
+.carousel-next {
+    right: 20px;
+}
+
+/* Dots indicators */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--secondary);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: var(--primary);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+/* Légende */
+.carousel-caption {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text);
+    font-style: italic;
+    min-height: 50px;
+    padding: 10px;
+    transition: opacity 0.3s;
+}
+
+/* Section Vœux */
+.wishes {
+    padding: 100px 20px;
+    background: var(--light);
+}
+
+.wishes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.wish-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+.wish-card:nth-child(1) { animation-delay: 0.2s; }
+.wish-card:nth-child(2) { animation-delay: 0.3s; }
+.wish-card:nth-child(3) { animation-delay: 0.4s; }
+.wish-card:nth-child(4) { animation-delay: 0.5s; }
+
+.wish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px var(--shadow);
+}
+
+.wish-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.wish-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+
+.wish-card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.birthday-message {
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--dark);
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+/* Section Message Personnel */
+.personal-message {
+    padding: 100px 20px;
+    background: white;
+}
+
+.message-card-large {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    padding: 50px;
+    background: linear-gradient(135deg, #fff, var(--light));
+    border-radius: 16px;
+    box-shadow: 0 30px 60px var(--shadow);
+    border: 1px solid var(--secondary);
+}
+
+.message-card-large h3 {
+    font-size: 2rem;
+    color: var(--primary-dark);
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.message-card-large h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: var(--primary);
+}
+
+.message-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+.message-content p:last-of-type {
+    font-size: 1.3rem;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--primary-dark);
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.message-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--secondary);
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.signature {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--primary);
+}
+
+/* Compteur anniversaire */
+.birthday-counter {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.counter-label {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.counter-timer {
+    font-size: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--primary-dark);
+    animation: softPulse 2s infinite;
+}
+
+@keyframes softPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Footer */
+.footer {
+    padding: 30px;
+    text-align: center;
+    border-top: 1px solid var(--secondary);
+    color: #999;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    background: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .title-line::before,
+    .title-line::after {
+        width: 20px;
+        left: -30px;
+        right: -30px;
+    }
+    
+    .wishes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .carousel-slide {
+        height: 350px;
+    }
+    
+    .carousel-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .message-card-large {
+        padding: 30px;
+    }
+    
+    .message-card-large h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .age-badge {
+        padding: 8px 20px;
+    }
+    
+    .age-number {
+        font-size: 1.8rem;
+    }
+    
+    .hero-quote {
+        font-size: 1rem;
+    }
+    
+    .carousel-slide {
+        height: 250px;
+    }
+    
+    .carousel-nav {
+        display: none;
+    }
+    
+    .message-card-large {
+        padding: 20px;
+    }
+    
+    .message-footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
